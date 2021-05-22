@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&family=Space+Mono:wght@400;700&display=swap");
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.container {
+  --vermelho: #F87070;
+  --ciano: #70F3F8;
+  --roxo: #D881F8;
+  --cinza-claro: #D7E0FF;
+  --azul-escuro: #1E213F;
+  --branco: #FFFFFF;
+  --gelo: #EFF1FA;
+  --azul-muito-escuro: #161932;
+  --largura-relogio: 366px;
+  --cor-que-muda: var(--vermelho);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+  padding: 48px 0 56px 0;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: var(--azul-escuro);
+  color: var(--cinza-claro);
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: var(--cinza-claro);
+}
+
+.botoes-tempo{
+  display: flex;
+  gap: 22px;
+  background-color: var(--azul-muito-escuro);
+  border-radius: 31.5px;
+  padding: 7px;
+}
+
+button {
+  all: unset;
+  color:inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.botoes-tempo button {
+  font-weight: bold;
+  padding: 18px 25px;
+  font-size: 14px;
+  line-height: 14px;
+  opacity: 0.4;
+}
+
+.botoes-tempo button:hover {
+  opacity: 1;
+}
+
+.botoes-tempo .botao-selecionado {
+  background-color: var(--cor-que-muda);
+  color: var(--azul-escuro);
+  font-weight: bold;
+  border-radius: 26.5px;
+  border: 0;
+  opacity: 1;
+}
+
+.relogio-fundo{
+  padding: 22px;
+  background-image: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+  box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  z-index: 0;
+}
+
+.relogio{
+  width: var(--largura-relogio);
+  height: var(--largura-relogio);
+  background-color: var(--azul-muito-escuro);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.tempo {
+  font-weight: bold;
+  font-size: 100px;
+  line-height: 101px;
+  letter-spacing: -5px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+.relogio button {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: 15px;
+}
+
+.relogio button:hover {
+  color: var(--cor-que-muda);
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .botoes-tempo button {
+    font-size: 12px;
+    line-height: 12px;
+  }
+
+  .relogio-fundo {
+    padding: 16px;
+  }
+
+  .relogio {
+    width: 267px;
+    height: 267px;
+  }
+
+  .tempo {
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -4px;
+  }
+
+  .relogio button {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 13.125px;
+  }
+}
+
+.configuracao-fundo {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(10, 12, 28, 0.5);;
+}
+
+.configuracao-fundo-fechada {
+  display: none;
+}
+
+.configuracao {
+  position: relative;
+  background-color: var(--branco);
+  border-radius: 25px;
+  padding: 35px 40px 59px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 1px solid  #16193210;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 28px;
+  color: var(--azul-muito-escuro);
+}
+
+.configuracao-tempo{
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid  #16193210;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 13px;
+  letter-spacing: 5px;
+  color: var(--azul-muito-escuro);
+}
+
+.inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.input-tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label{
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  color: var(--azul-escuro);
+  opacity: 0.4;
+}
+
+input {
+  background-color: var(--gelo);
+  padding: 16px;
+  border-radius: 10px;
+  color: var(--azul-escuro);
+  font-weight: bold;
+  font-size: 14px;
+  max-width: 140px;
+  border: 0;
+}
+
+.fonts {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  border-bottom: 1px solid  #16193210;
+  align-items: center;
+}
+
+.opcoes-font {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.opcoes-font button {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--azul-escuro);
+  padding: 10px;
+  background-color: var(--gelo);
+  border-radius: 50%;
+}
+
+.opcoes-font .font-selecionada {
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.cores {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opcoes-cores {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.opcoes-cores button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.sem-svg {
+  display: none;
+}
+
+.configuracao .apply {
+  position: absolute;
+  bottom: -25px;
+  left: 200px;
+  background-color: var(--vermelho);
+  color: var(--branco);
+  width: 140px;
+  height: 53px;
+  border-radius: 26.5px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.apply:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .configuracao-fundo {
+    padding: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .inputs {
+    flex-direction: column;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .input-tempo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .fonts, .cores{
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .configuracao .apply {
+    left: 80px
+  }
+}
+
+

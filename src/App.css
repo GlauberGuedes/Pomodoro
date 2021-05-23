@@ -116,6 +116,10 @@ button {
     font-size: 24px;
   }
 
+  .botoes-tempo {
+    margin-bottom: 20px;
+  }
+
   .botoes-tempo button {
     font-size: 12px;
     line-height: 12px;
@@ -128,12 +132,14 @@ button {
   .relogio {
     width: 267px;
     height: 267px;
+    gap: 0;
   }
 
   .tempo {
     font-size: 80px;
     line-height: 80px;
     letter-spacing: -4px;
+    margin-bottom: 30px;
   }
 
   .relogio button {

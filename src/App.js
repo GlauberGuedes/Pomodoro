@@ -75,20 +75,22 @@ function App() {
   const inputConfigTempo = useRef(modoPadrao[0].duracao);
   const inputConfigModo = useRef(modoPadrao[0].nome);
 
+
   const minutos = String(Math.floor(tempo / 60)).padStart(2, "0");
   const segundos = String(tempo % 60).padStart(2, "0");
   const intervalId = useRef();
 
   useEffect(() => {
     if (ligado) {
+      if(tempo > 0) {
       intervalId.current = setInterval(
         () => setTempo((tempoanterior) => tempoanterior - 1),
         1000
       );
-      console.log("limpei");
+      }
     }
     return () => clearInterval(intervalId.current);
-  }, [ligado]);
+  }, [ligado, tempo]);
 
   return (
     <div

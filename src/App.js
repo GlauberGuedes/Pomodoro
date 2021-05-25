@@ -268,6 +268,15 @@ function App() {
           </button>
         </div>
       </div>
+      <div className="alarme" style={{display: tempo === 0 ? "" : "none"}}>
+        <div className="botao-alarme">
+            <button onClick={() => {
+              setBotaoSelecionado(modoPadrao[0].nome);
+              setTempo(modoPadrao[0].duracao);
+              setLigado(false);
+            }}>Dispensar</button>
+        </div>
+      </div>
     </div>
   );
 }

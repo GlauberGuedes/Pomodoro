@@ -158,7 +158,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(10, 12, 28, 0.5);;
+  background-color: rgba(10, 12, 28, 0.5);
 }
 
 .configuracao-fundo-fechada {
@@ -340,6 +340,50 @@ input {
   .configuracao .apply {
     left: 80px
   }
+}
+
+.alarme {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(10, 12, 28, 0.6);
+}
+
+.botao-alarme {
+  border: 5px solid #1c215c;
+  border-radius: 50%;
+}
+
+@keyframes scale {
+  from {
+    border: 1px solid #1c215c80;
+  }
+  to {
+    border: 50px solid #1c215c86;
+  }
+}
+
+.botao-alarme button{
+  animation-name: scale;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-direction:normal;
+  animation-iteration-count: infinite;
+}
+
+.botao-alarme button {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
 }
 
 

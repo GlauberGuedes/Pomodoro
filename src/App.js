@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect, useState, useRef } from "react";
+import despertador from './assets/despertador.mp3';
 
 const inputDaConfiguracao = [
   {
@@ -74,6 +75,7 @@ function App() {
   const [fontFocus, setFontFocus] = useState(tiposDeFont[0].nome);
   const inputConfigTempo = useRef(modoPadrao[0].duracao);
   const inputConfigModo = useRef(modoPadrao[0].nome);
+  const refAudio = useRef();
 
 
   const minutos = String(Math.floor(tempo / 60)).padStart(2, "0");
@@ -91,6 +93,12 @@ function App() {
     }
     return () => clearInterval(intervalId.current);
   }, [ligado, tempo]);
+
+  useEffect(() => {
+    if(tempo === 0) {
+      refAudio.current.play();
+    }
+  },[tempo]);
 
   return (
     <div
@@ -269,11 +277,16 @@ function App() {
         </div>
       </div>
       <div className="alarme" style={{display: tempo === 0 ? "" : "none"}}>
+        <audio controls ref={refAudio}>
+          <source src={despertador}/>
+        </audio>
         <div className="botao-alarme">
             <button onClick={() => {
               setBotaoSelecionado(inputConfiguracao[0].nome);
               setTempo(inputConfiguracao[0].duracao);
               setLigado(false);
+              refAudio.current.pause();
+              refAudio.current.currentTime = 0;
             }}>Dispensar</button>
         </div>
       </div>

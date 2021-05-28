@@ -11,14 +11,15 @@ export default function Alarme({
   const refAudio = useRef();
 
   useEffect(() => {
-    if (tempo === 0) {
+    if (tempo === 55) {
+      refAudio.current.volume = 0.2;
       refAudio.current.play();
     }
   }, [tempo]);
 
   return (
     <div className="alarme" style={{ display: tempo === 0 ? "" : "none" }}>
-      <audio controls ref={refAudio}>
+      <audio ref={refAudio}>
         <source src={despertador} />
       </audio>
       <div className="botao-alarme">

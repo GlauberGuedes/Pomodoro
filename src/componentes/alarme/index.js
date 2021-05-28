@@ -11,7 +11,7 @@ export default function Alarme({
   const refAudio = useRef();
 
   useEffect(() => {
-    if (tempo === 55) {
+    if (tempo === 0) {
       refAudio.current.volume = 0.2;
       refAudio.current.play();
     }
